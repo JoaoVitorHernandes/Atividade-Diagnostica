@@ -22,4 +22,8 @@ public class Veiculo {
     public int getAno() {
         return ano;
     }
+
+    public String getCor() {
+        return cor;
+    }
 }

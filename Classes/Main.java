@@ -9,12 +9,11 @@ public class Main {
         System.out.println("1. Cadastrar Veículo");
         System.out.println("2. Cadastrar Funcionário");
         System.out.println("3. Cadastrar Cliente");
-        System.out.println("4. Cadastrar Pagamento");
+        System.out.println("4. Escolher Serviço");
         System.out.println("5. Sair");
         int opcao = sc.nextInt();
 
         if (opcao == 1) {
-            System.out.println("Digite a marca do veículo:");
             String marca = sc.nextLine();
             while (marca.equals("")) {
                 System.out.println("Digite a marca do veículo:");
@@ -32,7 +31,6 @@ public class Main {
                 System.out.println("Digite o ano do veículo:");
                 ano = sc.nextInt();
             }
-            System.out.println("Digite a cor do veículo:");
             String cor = sc.nextLine();
             while (cor.equals("")) {
                 System.out.println("Digite a cor do veículo:");
@@ -41,10 +39,12 @@ public class Main {
 
             Veiculo v = new Veiculo(marca, modelo, ano, cor);
             System.out.println("O veículo foi cadastrado com sucesso!");
+            System.out.println("O Cliente foi cadastrado com sucesso!");
+            System.out.println("Marca:" + v.getMarca() + " Modelo:" + v.getModelo() + " Ano:" + v.getAno() + " Cor:" + v.getCor());
 
 
         } else if (opcao == 2) {
-            System.out.println("Digite o nome do funcionário:");
+
             String nome = sc.nextLine();
             while (nome.equals("")) {
                 System.out.println("Digite o nome do funcionário:");
@@ -56,7 +56,6 @@ public class Main {
                 System.out.println("Digite a idade do funcionário:");
                 idade = sc.nextInt();
             }
-            System.out.println("Digite o telefone do funcionário:");
             String telefone = sc.nextLine();
             while (telefone.equals("")) {
                 System.out.println("Digite o telefone do funcionário:");
@@ -70,6 +69,8 @@ public class Main {
             }
             Funcionario f = new Funcionario(nome, idade, telefone, email);
             System.out.println("O funcionário foi cadastrado com sucesso!");
+            System.out.println("O Cliente foi cadastrado com sucesso!");
+            System.out.println("Nome:" + f.getNome() + " Idade:" + f.getIdade() + " telefone:" + f.getTelefone() + " Email:" + f.getEmail());
 
 
         } else if (opcao == 3) {
@@ -85,7 +86,6 @@ public class Main {
                 System.out.println("Digite a idade do Cliente:");
                 idade = sc.nextInt();
             }
-            System.out.println("Digite o telefone do Cliente:");
             String telefone = sc.nextLine();
             while (telefone.equals("")) {
                 System.out.println("Digite o telefone do Cliente:");
@@ -99,8 +99,11 @@ public class Main {
             }
             Cliente c = new Cliente(nome, idade, telefone, email);
             System.out.println("O Cliente foi cadastrado com sucesso!");
-            System.out.println("Nome: " + c.getNome() + " Idade: " + c.getIdade() + " telefone: " + c.getTelefone() + " Email: " + c.getEmail());
+            System.out.println("Nome:" + c.getNome() + " Idade:" + c.getIdade() + " telefone:" + c.getTelefone() + " Email:" + c.getEmail());
 
+
+        } else if (opcao == 5) {
+            System.exit(0);
         }
     }
 }
