@@ -25,68 +25,11 @@ public class Main {
                 while (true) {
                     System.out.println("Escolha uma opção: ");
                     System.out.println("1. Cadastrar seu Veículo");
-                    System.out.println("2. Se Cadastrar");
-                    System.out.println("3. Sair");
+                    System.out.println("2. Sair");
                     int opcao = sc.nextInt();
 
                     if (opcao == 1) {
-                        String marca = sc.nextLine();
-                        while (marca.equals("")) {
-                            System.out.println("Digite a marca do veículo:");
-                            marca = sc.nextLine();
-                        }
-
-                        System.out.println("Digite o modelo do veículo:");
-                        String modelo = sc.nextLine();
-                        while (modelo.equals("")) {
-                            System.out.println("Digite o modelo do veículo:");
-                            modelo = sc.nextLine();
-                        }
-
-                        System.out.println("Digite o ano do veículo:");
-                        int ano = sc.nextInt();
-                        while (ano > 2025) {
-                            System.out.println("Digite o ano do veículo:");
-                            ano = sc.nextInt();
-                        }
-
-                        String cor = sc.nextLine();
-                        while (cor.equals("")) {
-                            System.out.println("Digite a cor do veículo:");
-                            cor = sc.nextLine();
-                        }
-
-                        Veiculo v = new Veiculo(marca, modelo, ano, cor);
-                        System.out.println("O veículo foi cadastrado com sucesso!");
-                        System.out.println("Marca: " + v.getMarca() + " Modelo: " + v.getModelo() + " Ano: " + v.getAno() + " Cor: " + v.getCor());
-
-                        br.write("-Veículo-");
-                        br.newLine();
-                        br.write("Marca: " + v.getMarca());
-                        br.newLine();
-                        br.write("Modelo: " + v.getModelo());
-                        br.newLine();
-                        br.write("Ano: " + v.getAno());
-                        br.newLine();
-                        br.write("Cor: " + v.getCor());
-                        br.newLine();
-
-                        while (true) {
-                            System.out.println("---Escolha o serviço que quer utilizar: ---");
-                            System.out.println("1-> Lavar Veículo");
-                            System.out.println("2-> Voltar");
-                            int escolha = sc.nextInt();
-                            if (escolha == 1) {
-                                System.out.println("O veículo " + "Marca: " + v.getMarca() + " Modelo: " + v.getModelo() + " Ano: " + v.getAno() + " Cor: " + v.getCor() + " será lavado");
-                                break;
-                            } else if (escolha == 2) {
-                                break;
-                            } else {
-                                System.out.println("Opção inválida. Tente novamente.");
-                            }
-                        }
-
-                    } else if (opcao == 2) {
+                        System.out.println("Se Identifique:");
                         System.out.println("Digite seu nome:");
                         String nome = sc.nextLine();
                         while (nome.equals("")) {
@@ -127,7 +70,66 @@ public class Main {
                         cl.write("Email: " + c.getEmail());
                         cl.newLine();
 
-                    } else if (opcao == 3) {
+                        System.out.println("Digite a marca do veículo:");
+                        String marca = sc.nextLine();
+                        while (marca.equals("")) {
+                            System.out.println("Digite a marca do veículo:");
+                            marca = sc.nextLine();
+                        }
+
+                        System.out.println("Digite o modelo do veículo:");
+                        String modelo = sc.nextLine();
+                        while (modelo.equals("")) {
+                            System.out.println("Digite o modelo do veículo:");
+                            modelo = sc.nextLine();
+                        }
+
+                        System.out.println("Digite o ano do veículo:");
+                        int ano = sc.nextInt();
+                        while (ano > 2025) {
+                            System.out.println("Digite o ano do veículo:");
+                            ano = sc.nextInt();
+                        }
+
+                        String cor = sc.nextLine();
+                        while (cor.equals("")) {
+                            System.out.println("Digite a cor do veículo:");
+                            cor = sc.nextLine();
+                        }
+
+                        Veiculo v = new Veiculo(marca, modelo, ano, cor);
+                        System.out.println("O veículo foi cadastrado com sucesso!");
+                        System.out.println("Marca: " + v.getMarca() + " Modelo: " + v.getModelo() + " Ano: " + v.getAno() + " Cor: " + v.getCor());
+
+                        br.write("-Veículo-");
+                        br.newLine();
+                        br.write("Cliente: " + c.getNome());
+                        br.newLine();
+                        br.write("Marca: " + v.getMarca());
+                        br.newLine();
+                        br.write("Modelo: " + v.getModelo());
+                        br.newLine();
+                        br.write("Ano: " + v.getAno());
+                        br.newLine();
+                        br.write("Cor: " + v.getCor());
+                        br.newLine();
+
+                        while (true) {
+                            System.out.println("---Escolha o serviço que quer utilizar: ---");
+                            System.out.println("1-> Lavar Veículo");
+                            System.out.println("2-> Voltar");
+                            int escolha = sc.nextInt();
+                            if (escolha == 1) {
+                                System.out.println("O veículo "+ "de " + c.getNome() + " com " + "Marca: " + v.getMarca() + " Modelo: " + v.getModelo() + " Ano: " + v.getAno() + " Cor: " + v.getCor() + " será lavado");
+                                break;
+                            } else if (escolha == 2) {
+                                break;
+                            } else {
+                                System.out.println("Opção inválida. Tente novamente.");
+                            }
+                        }
+
+                    } else if (opcao == 2) {
                         break;
                     }
                 }
